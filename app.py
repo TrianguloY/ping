@@ -12,6 +12,7 @@ app = Flask(__name__)
 ########
 
 @app.route('/ping/', methods=['GET','POST'])
+@app.route('/ping', methods=['GET','POST'])
 def ping():
 
     # get url
