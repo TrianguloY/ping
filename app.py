@@ -1,5 +1,7 @@
 import os
 import requests
+import urllib.parse
+
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -22,12 +24,15 @@ def ping():
     # get content
     content = request.full_path
     
-    # check content
+    # check no content
     if '?' not in content:
         return 'No content', 404
     content = content[content.index('?')+1:].strip()
     if content == '':
         return 'Empty content', 404
+    
+    # decode content
+    content = urllib.parse.unquote(content)
     
     # do request
     r = requests.post(url, json={"content":content})
