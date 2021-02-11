@@ -7,11 +7,11 @@ from flask import Flask, request
 app = Flask(__name__)
 
 
-###############
-# The request #
-###############
+########
+# Ping #
+########
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/ping/', methods=['GET','POST'])
 def ping():
 
     # get url
