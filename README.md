@@ -9,7 +9,7 @@ If you want to deploy your own copy for personal use, just:
 1) Add an environment variable named 'URL' with the Discord webhook.
 
 ## Usage
-Access the main page with a message after the '?' that will be sent to discord: Example `$curl https://<server>.heroku.app?Hello` will post a 'Hello' message to the discord channel of the webhook.
+Access the ping subpage with a message after the '?' that will be sent to discord: Example `$curl <URL>/ping?Hello` will post a 'Hello' message to the discord channel of the webhook. Remember that spaces and other characters need to be translated (if they aren't automatically) for example `$curl <URL>/ping?Hello%20World`
 
 ## Contributions
 Although this project was made for personal use, if you want to send pull requests or make/suggest changes I'll be happy to discuss them. The conversion was manually made so it may not have all type of events into consideration.
