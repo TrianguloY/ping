@@ -25,12 +25,12 @@ def ping():
     # check content
     if '?' not in content:
         return 'No content', 404
-    content = content[content.index['?']+1:].strip()
+    content = content[content.index('?')+1:].strip()
     if content == '':
         return 'Empty content', 404
     
     # do request
-    r = requests.post(url, json={"content":""})
+    r = requests.post(url, json={"content":content})
     
     # return same response
     return r.content, r.status_code, r.headers.items()
@@ -44,7 +44,7 @@ app.config['TRAP_HTTP_EXCEPTIONS'] = True
 
 @app.errorhandler(Exception)
 def invalid(e):
-    return f'Invalid request: {e}', 404
+    return f'Invalid request: {repr(e)}', 404
 
 
 ########
