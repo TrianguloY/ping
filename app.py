@@ -44,7 +44,7 @@ app.config['TRAP_HTTP_EXCEPTIONS'] = True
 
 @app.errorhandler(Exception)
 def invalid(e):
-    return 'Invalid request', 404
+    return f'Invalid request: {e}', 404
 
 
 ########
